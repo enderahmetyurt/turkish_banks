@@ -9,13 +9,13 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ender Ahmet Yurt"]
   spec.email         = ["enderyurt@gmail.com"]
 
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = ""
-  end
+  # if spec.respond_to?(:metadata)
+  #   spec.metadata['allowed_push_host'] = ""
+  # end
 
   spec.summary       = "Fetch Turkish Banks and their branches."
   spec.description   = "Fetch the all data about Turkish Banks and theri branches."
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/enderahmetyurt/turkish_banks"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
