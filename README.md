@@ -1,6 +1,7 @@
 # TurkishBanks 
 
 [![Gem Version](https://badge.fury.io/rb/turkish_banks.svg)](http://badge.fury.io/rb/turkish_banks)
+[![Code Climate](https://codeclimate.com/github/enderahmetyurt/turkish_support/badges/gpa.svg)](https://codeclimate.com/github/enderahmetyurt/turkish_support)
 
 Fetch all banks and their information from http://www.tcmb.gov.tr/.
 
