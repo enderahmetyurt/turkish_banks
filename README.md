@@ -1,4 +1,6 @@
-# TurkishBanks
+# TurkishBanks 
+
+[![Gem Version](https://badge.fury.io/rb/turkish_banks.svg)](http://badge.fury.io/rb/turkish_banks)
 
 Fetch all banks and their information from http://www.tcmb.gov.tr/.
 
