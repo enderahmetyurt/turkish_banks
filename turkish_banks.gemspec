@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   # end
 
   spec.summary       = "Fetch Turkish Banks and their branches."
-  spec.description   = "Fetch the all data about Turkish Banks and theri branches."
+  spec.description   = "Fetch the all data about Turkish Banks and their branches."
   spec.homepage      = "https://github.com/enderahmetyurt/turkish_banks"
   spec.license       = "MIT"
 
