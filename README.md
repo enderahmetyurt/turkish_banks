@@ -24,15 +24,22 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
+# Creates a TurkishBank object
 turkish_bank = TurkishBanks::TurkishBank.new
-# Get last update date
+
+# Gets last update date
 turkish_bank.last_update_date
-# Get all banks
+
+# Gets all banks
 turkish_bank.banks
-# Get information of a bank with the name
-turkish_bank.get_information_of "turkiye cumhuriyeti ziraat bankası a.ş."
-# Get branch of the the bank
-turkish_bank.get_branches_of "turkiye cumhuriyeti ziraat bankası a.ş."
+
+# Returns a bank object
+bank = turkish_bank.get_information_of "türkiye cumhuriyeti ziraat bankası a.ş."
+bank.name # => TÜRKİYE CUMHURİYETİ ZIRAAT BANKASI A.Ş.
+
+# Returns a collection of branch objectes
+branches = turkish_bank.get_branches_of "türkiye cumhuriyeti ziraat bankası a.ş."
+branches.first.name # => "ANKARA ŞUBESİ"
 ```    
 
 ## TODO
