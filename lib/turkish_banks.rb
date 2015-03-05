@@ -6,6 +6,8 @@ require "nokogiri"
 require "turkish_banks/version"
 
 require "turkish_banks/turkish_bank"
+require "turkish_banks/bank"
+require "turkish_banks/branch"
 
 module TurkishBanks
 end
