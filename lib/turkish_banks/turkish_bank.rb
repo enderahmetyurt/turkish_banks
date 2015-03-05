@@ -1,4 +1,5 @@
 require "turkish_support"
+
 module TurkishBanks
   class TurkishBank
     using TurkishSupport
@@ -15,16 +16,20 @@ module TurkishBanks
     end
 
     def get_information_of bank_name
-      bank(bank_name).first["banka"]
+      bank = get_bank(bank_name).first["banka"]
+      TurkishBanks::Bank.new bank
     end
 
     def get_branches_of bank_name
-      bank(bank_name).first["sube"]
-    end 
+      branches = get_bank(bank_name).first["sube"]
+      branches.each do |branch|
+        TurkishBanks::Branch.new branch
+      end
+    end
 
     private
 
-    def bank bank_name
+    def get_bank bank_name
       @banks.select {|b| b["banka"]["bAd"] == bank_name.upcase}
     end
   end
