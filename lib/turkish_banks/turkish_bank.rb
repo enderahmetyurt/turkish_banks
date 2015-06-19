@@ -5,8 +5,8 @@ module TurkishBanks
     using TurkishSupport
     attr_accessor :last_update_date, :banks
 
-    BANKS_URL = "http://eft.tcmb.gov.tr/bankasubelistesi/bankaSubeTumListe.xml"    
-    
+    BANKS_URL = "http://eftemkt.tcmb.gov.tr/bankasubelistesi/bankaSubeTumListe.xml"
+
     def initialize
       doc = Nokogiri.XML(open(BANKS_URL), nil, 'UTF-8')
       doc.remove_namespaces!
