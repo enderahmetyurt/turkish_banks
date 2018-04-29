@@ -46,11 +46,3 @@ branches.first.name # => "ANKARA ŞUBESİ"
 
 * Improve search part.
 * New features. Please send some pull-request.
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/turkish_banks/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
