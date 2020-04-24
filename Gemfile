@@ -4,6 +4,6 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
-  gem 'pry', '~> 0.10.0'
-  gem 'rspec', '>= 2.14'
+  gem 'pry', '~> 0.13.1'
+  gem 'rspec', '>= 3.9.0'
 end
