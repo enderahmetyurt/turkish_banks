@@ -4,10 +4,11 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'turkish_banks/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "turkish_banks"
-  spec.version       = TurkishBanks::VERSION
-  spec.authors       = ["Ender Ahmet Yurt"]
-  spec.email         = ["enderyurt@gmail.com"]
+  spec.name                  = "turkish_banks"
+  spec.version               = TurkishBanks::VERSION
+  spec.required_ruby_version = '>= 2.5.1'
+  spec.authors               = ["Ender Ahmet Yurt"]
+  spec.email                 = ["enderyurt@gmail.com"]
 
   # if spec.respond_to?(:metadata)
   #   spec.metadata['allowed_push_host'] = ""
@@ -23,9 +24,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.8"
-  spec.add_development_dependency "rake", "~> 12.0"
-  spec.add_development_dependency "nokogiri", "~> 1.8.1"
-  spec.add_development_dependency "activesupport"
-  spec.add_development_dependency "turkish_support"
+  spec.add_development_dependency "activesupport", "~> 6.0.2.2"
+  spec.add_development_dependency "bundler", "~> 2.1.4"
+  spec.add_development_dependency "nokogiri", "~> 1.10.9"
+  spec.add_development_dependency "rake", "~> 13.0.0"
 end
