@@ -23,5 +23,5 @@ describe TurkishBanks::Branch do
       message = @tb.get_branches_of "gram altın oldu uzay bankası a.ş."
       expect(message).to eq "gram altın oldu uzay bankası a.ş. isminde bir bankaya ait şube bilgisi bulunamadı."
     end
-  end  
+  end
 end

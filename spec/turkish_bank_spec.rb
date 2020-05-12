@@ -11,7 +11,7 @@ describe TurkishBanks::TurkishBank do
       expect(@tb.last_update_date).not_to be nil
     end
   end
-  
+
   context "#get_information_of" do
     it "has bank information" do
       bank = @tb.get_information_of "türkiye cumhuriyeti ziraat bankası a.ş."
@@ -24,5 +24,26 @@ describe TurkishBanks::TurkishBank do
       branches = @tb.get_branches_of "türkiye cumhuriyeti ziraat bankası a.ş."
       expect(branches).not_to be nil
     end
-  end  
+
+    it "has branches of the bank only given district" do
+      branches = @tb.get_branches_of "türkiye cumhuriyeti ziraat bankası a.ş.", "ERZURUM"
+      expect(branches.length).to eq 23
+    end
+
+    it "has branches of the bank only given district" do
+      branches = @tb.get_branches_of "türkiye cumhuriyeti ziraat bankası a.ş.", "İSTANBUL", "ŞİŞLİ"
+      expect(branches.length).to eq 11
+    end
+
+    it "has not branches of the bank given wrong district" do
+      branches = @tb.get_branches_of "türkiye cumhuriyeti ziraat bankası a.ş.", "FALANBUL"
+      expect(branches).to eq "FALANBUL ilinde türkiye cumhuriyeti ziraat bankası a.ş.'ye ait şube bilgisi bulunamadı."
+    end
+
+    it "has not branches of the bank given wrong district" do
+      branches = @tb.get_branches_of "türkiye cumhuriyeti ziraat bankası a.ş.", "İSTANBUL", "ÜNYE"
+      expect(branches).to eq "İSTANBUL ili ÜNYE ilçesinde türkiye cumhuriyeti ziraat bankası a.ş.'ye ait şube bilgisi bulunamadı."
+    end
+  end
 end
+
