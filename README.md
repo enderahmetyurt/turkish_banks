@@ -24,25 +24,34 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-# Creates a TurkishBank object
-turkish_bank = TurkishBanks::TurkishBank.new
-
 # Gets last update date
-turkish_bank.last_update_date
+TurkishBanks::LAST_UPDATE
 
 # Gets all banks
-turkish_bank.banks
+TurkishBanks.banks
 
-# Returns a bank object
-bank = turkish_bank.get_information_of "türkiye cumhuriyeti ziraat bankası a.ş."
-bank.name # => TÜRKİYE CUMHURİYETİ ZIRAAT BANKASI A.Ş.
+# Create a bank from its name
+bank = TurkishBanks::Bank.new("türkiye cumhuriyeti ziraat bankası a.ş.")
+bank.name # => "TÜRKİYE CUMHURİYETİ ZIRAAT BANKASI A.Ş."
 
-# Returns a collection of branch objectes
-branches = turkish_bank.get_branches_of "türkiye cumhuriyeti ziraat bankası a.ş."
-branches.first.name # => "ANKARA ŞUBESİ"
-```    
+# Get a collection of branch objects
+branches = bank.branches
+branches.first.name # => "MERKEZ/ANKARA ŞUBESİ"
+branches.size       # => 1791
+```
+
+## Exception Handling
+
+If you pass the wrong bank name to `Bank#new`, it raises `TurkishBanks::BankNotFoundError` exception. You can rescue this error an do something else.
+
+```ruby
+begin
+  TurkishBanks::Bank.new('fake bank')
+rescue TurkishBanks::BankNotFoundError
+  # do something here
+end
+``` 
 
 ## TODO
-
 * Improve search part.
 * New features. Please send some pull-request.
