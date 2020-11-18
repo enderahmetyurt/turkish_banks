@@ -16,7 +16,7 @@ describe TurkishBanks::Bank do
       invalid_bank_name = 'yok böyle bir banka a.ş'
 
       expect { TurkishBanks::Bank.new(invalid_bank_name) }
-        .to raise_error(TurkishBanks::BankNotFoundError)
+        .to raise_error(TurkishBanks::BankNotFoundError, 'Banka bulunamadı.')
     end
   end
 

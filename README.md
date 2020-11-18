@@ -42,7 +42,7 @@ branches.size       # => 1791
 
 ## Exception Handling
 
-If you pass the wrong bank name to `Bank#new`, it raises `TurkishBanks::BankNotFoundError` exception. You can rescue this error an do something else.
+If you pass the wrong bank name to `Bank#new`, it raises `TurkishBanks::BankNotFoundError` exception. You can rescue this error, then do something else.
 
 ```ruby
 begin

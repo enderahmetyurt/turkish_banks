@@ -1,5 +1,9 @@
 module TurkishBanks
-  BankNotFoundError = Class.new(StandardError)
+  class BankNotFoundError < StandardError
+    def message
+      'Banka bulunamadı.'
+    end
+  end
 
   BANKS_URL = 'http://eftemkt.tcmb.gov.tr/bankasubelistesi/bankaSubeTumListe.xml'.freeze
   DOC = Nokogiri
@@ -9,7 +13,7 @@ module TurkishBanks
 
   def self.get_bank_params(bank_name)
     node = DOC.at_xpath("//banka[bAd= '#{bank_name.upcase(:turkic)}']")
-    raise BankNotFoundError, "Bu isimde bir banka bulunamadı: #{bank_name}" if node.nil?
+    raise BankNotFoundError if node.nil?
 
     Hash.from_xml(node.to_s)['banka']
   end
