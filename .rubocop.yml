@@ -1,0 +1,16 @@
+AllCops:
+  Exclude:
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'turkish_banks.gemspec'
+  NewCops: enable
+Layout/LineLength:
+  Max: 120
+Metrics/AbcSize:
+  Max: 20
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+Metrics/MethodLength:
+  Max: 15
+Style/Documentation:
+  Enabled: false

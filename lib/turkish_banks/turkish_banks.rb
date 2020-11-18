@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TurkishBanks
   class BankNotFoundError < StandardError
     def message
@@ -5,7 +7,7 @@ module TurkishBanks
     end
   end
 
-  BANKS_URL = 'http://eftemkt.tcmb.gov.tr/bankasubelistesi/bankaSubeTumListe.xml'.freeze
+  BANKS_URL = 'http://eftemkt.tcmb.gov.tr/bankasubelistesi/bankaSubeTumListe.xml'
   DOC = Nokogiri
         .XML(::OpenURI.open_uri(BANKS_URL), nil, 'UTF-8')
         .remove_namespaces!.freeze

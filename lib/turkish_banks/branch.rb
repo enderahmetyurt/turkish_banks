@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TurkishBanks
   class Branch
     attr_reader :name, :code, :bank_code, :city_code,
